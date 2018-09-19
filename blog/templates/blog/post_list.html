@@ -7,24 +7,16 @@
 <body>
 <h3>Saare baaabe theek hon??</h3>
 <h3> Blog aa thode 22 da</h3>
-<div style="border-style: solid;margin: 5px;padding: 5px">
-    <div id ="title" style="text-align: center"><h1>First Post</h1></div>
-    <div id="author"><h2>Rajat Goyal</h2></div>
-    <div id="published_date"><time>23-10-2018</time></div>
-    <div id="post_content"><h3>Random post content  </h3></div>
-</div><div style="border-style: solid;margin: 5px;padding: 5px;">
-    <div id ="title" style="text-align: center"><h1>Second Post</h1></div>
-    <div id="author"><h2>Rajat Goyal</h2></div>
-    <div id="published_date"><time>23-10-2018</time></div>
-    <div id="post_content"><h3>Random post content  </h3></div>
-</div>
 
+{% for post in posts %}
 <div style="border-style: solid;margin: 5px;padding: 5px">
-    <div id ="title" style="text-align: center"><h1>Third Post</h1></div>
-    <div id="author"><h2>Rajat Goyal</h2></div>
-    <div id="published_date"><time>23-10-2018</time></div>
-    <div id="post_content"><h3>Random post content  </h3></div>
+       <div class ="title"><h1>{{post.title}}</h1></div>
+    <div class="author"><h2>{{post.author}}</h2></div>
+    <div class="published_date"><time>23-10-2018</time></div>
+    <div class="post_content"><h3>{{post.text}}</h3></div>
 </div>
+{%endfor%}ex
+
 
 </body>
 </html>
