@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800,200);
+body {
+  background: url(http://rajatgoyal.pythonanywhere.com/static/images/home-background.961a5572.jpg);
+  width: auto;
+  height: 850px;
+}
+
+#loader-container {
+  width: 200px;
+  height: 200px;
+  color: #BB1E1E;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #3498db;
+  border-radius: 50%;
+  -webkit-animation: borderScale 1s infinite ease-in-out;
+  animation: borderScale 1s infinite ease-in-out;
+}
+
+#loadingText {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes borderScale {
+  0% {
+    border: 5px solid white;
+  }
+  50% {
+    border: 25px solid #BB1E1E;
+  }
+  100% {
+    border: 5px solid white;
+  }
+}
+
+@keyframes borderScale {
+  0% {
+    border: 5px solid white;
+  }
+  50% {
+    border: 25px solid #BB1E1E;
+  }
+  100% {
+    border: 5px solid white;
+  }
+}

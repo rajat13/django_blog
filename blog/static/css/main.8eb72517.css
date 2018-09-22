@@ -1,4 +1,4 @@
-@font-face {
+font-face {
 	font-family: Roboto;
 	font-style: italic;
 	font-weight: 300;
@@ -3557,7 +3557,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	left: 0;
 	right: 0;
 	z-index: 1;
-	background: url(../images/home-background.961a5572.jpg) top center no-repeat #bababa;
+	background: url(../images/home-background-1.jpg) top center no-repeat #bababa;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
@@ -3580,11 +3580,23 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	.home-section {
 		font-size: 8px
 	}
+	.home-section .home-heading{
+		color: black;
+	}
+	.home-section .home-subheading{
+		color:black;
+	}
 }
 
 @media (max-width:567px) {
 	.home-section {
 		font-size: 7px
+	}
+	.home-section .home-subheading{
+		color:black;
+	}
+	.home-section .home-heading{
+		color:black;
 	}
 }
 

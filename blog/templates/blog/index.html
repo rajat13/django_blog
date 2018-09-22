@@ -1,7 +1,9 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Rajat Goyal - Software Development Engineer</title>
@@ -13,6 +15,9 @@
 
     <link rel="stylesheet" href="{% static '/css/main.8eb72517.css' %}">
     <script type="text/javascript" src="{% static '/javascript/main.b9b80f05.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/css/neural.css' %}">
+
+
 
 
 
@@ -37,6 +42,7 @@
   </head>
 
   <body class="parent-home">
+  <canvas id=c style="background-color: orange"></canvas>
     <aside class="site-sidebar">
       <div class="site-sidebar-bg"></div>
 
@@ -83,15 +89,15 @@
 
           <div class="navigation-extendable">
             <ul>
-              <li class=""><a href="/skills-and-offer/">My skills &amp; offer</a></li>
-              <li class=""><a href="/portfolio/">Portfolio</a></li>
-              <li class=""><a href="/contact/">Contact</a></li>
+              <li class=""><a href="/skills-and-offer/" id="skills">My skills &amp; offer</a></li>
+              <li class=""><a href="/portfolio/" id="portfolio">Portfolio</a></li>
+              <li class=""><a href="/contact/" id="contact">Contact</a></li>
             </ul>
             <ul>
-              <li class=""><a href="/about-me/">About me</a></li>
+              <li class=""><a href="/about-me/" id="aboutme">About me</a></li>
               <!-- <li class=""><a href="/blog">Tech blog</a></li> -->
-              <li><a href="https://medium.com/@rajagoyal815" target="_blank">Personal blog</a></li>
-              <li class=""><a href="/talks/">My talks</a></li>
+              <li><a href="https://medium.com/@rajagoyal815" target="_blank" id="blog">Personal blog</a></li>
+              <li class=""><a href="/talks/" id ="talks">My talks</a></li>
             </ul>
           </div>
         </nav>
@@ -131,11 +137,11 @@
       <div class="site-main-inner">
         <div class="home-section">
   <div class="home-section-inner">
-    <div class="home-heading" style="color: #1b1e21">
+    <div class="home-heading">
       Hi, I'm Rajat.
     </div>
 
-    <h2 class="home-subheading" style="color: #1d2124">
+    <h2 class="home-subheading">
       I am a Computer Science Graduate from Thapar University, Currently i am working as Software Engineer at
       <strong>Amadeus Software Labs, Bengaluru</strong>.
     </h2>
@@ -155,6 +161,7 @@
       </div>
     </div>
 
+<script type="text/javascript" src="{% static '/javascript/speech-control.js' %}"></script>
 
   </body>
 </html>
