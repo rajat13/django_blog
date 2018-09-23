@@ -274,6 +274,7 @@ if (annyang) {
       respond('Playing diljit enjoy');
       annyang.abort();
       var audio = document.getElementById("diljit");
+      annyang.abort();
       audio.play();
     },
     'calculate :number times :number': function(x, y) {
