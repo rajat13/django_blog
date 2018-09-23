@@ -3028,7 +3028,7 @@ body {
 		right: -50px;
 		content: " ";
 		display: block;
-		background: url(../images/home-background2.961a5572.png) right top no-repeat #bababa;
+		background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") right top no-repeat #bababa;
 		background-size: cover;
 		width: auto;
 		height: 850px
@@ -3328,7 +3328,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	content: " ";
 	display: block;
 	width: 25%;
-	background: url(../images/home-background2.961a5572.png) top center no-repeat #bababa;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") top center no-repeat #bababa;
 
 	background-size: cover
 }
@@ -3577,7 +3577,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	left: 0;
 	right: 0;
 	z-index: 1;
-	background: url(../images/home-background2.961a5572.png) top center no-repeat #bababa;
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") top center no-repeat #bababa;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
@@ -3624,12 +3624,16 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 .home-section .home-heading {
 	font-size: 3.8em;
 	font-weight: 500;
+	 -webkit-transform: translate3d(0,0, 0);
+   transform: translate3d(0, 0, 0);
 
 }
 
 .home-section .home-subheading {
 	font-size:2.7em;
-	font-weight: 300;
+	 -webkit-transform: translate3d(0, 0, 0);
+
+	font-weight: 200;
 	text-transform: none
 }
 
