@@ -3622,13 +3622,13 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 }
 
 .home-section .home-heading {
-	font-size: 3.5em;
+	font-size: 3.8em;
 	font-weight: 500;
 
 }
 
 .home-section .home-subheading {
-	font-size:2.5em;
+	font-size:2.7em;
 	font-weight: 300;
 	text-transform: none
 }
@@ -3674,7 +3674,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 @media (max-width:567px) {
 	.home-section .home-buttons {
 		margin-top: 0.5em;
-		margin-bottom: 2em;
+		margin-bottom: 2.5em;
 		font-size: 16px
 	}
 }
