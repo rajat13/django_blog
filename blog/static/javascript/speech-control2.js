@@ -208,7 +208,7 @@ console.log(sentence);
 function noMatch(results) {
     if (namespoke==false) {
       user_name=results[0].trim();
-      namespoke=false;
+      namespoke=true;
       respond("Hello "+user_name+" Welcome, This website can be navigated with commands listed below");
     }
     else {
