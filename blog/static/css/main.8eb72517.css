@@ -3038,6 +3038,7 @@ body {
 	}
 }
 
+
 .site-sidebar .site-sidebar-bg {
 	background-color: #910d0d;
 	background-color: rgba(145, 13, 13, .8);
@@ -3328,11 +3329,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	display: block;
 	width: 25%;
 	background: url(../images/home-background2.961a5572.png) top center no-repeat #bababa;
-	&:after {
-    content: '';
-    @extend .absolute-centering;
-    background: rgba(#344557, .85);
-  }
+
 	background-size: cover
 }
 
@@ -3677,7 +3674,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 @media (max-width:567px) {
 	.home-section .home-buttons {
 		margin-top: 0.5em;
-		margin-bottom: 8em;
+		margin-bottom: 4em;
 		font-size: 18px
 	}
 }
