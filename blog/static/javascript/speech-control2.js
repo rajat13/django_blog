@@ -271,16 +271,11 @@ if (annyang) {
       respond("oh my god Becky, look at her butt");
     },
     'play diljit':function(){
-      $.ajax({
-  url: abort(),
-  success: function(){
-    respond('Playing diljit enjoy');
-      var audio = document.getElementById("diljit");
-      audio.play();
-  }
-});
-
-
+        console.log("diljit came");
+        setTimeout(function (){abort();},5000);
+            respond('Playing diljit enjoy');
+            var audio = document.getElementById("diljit");
+            audio.play();
     },
     'calculate :number times :number': function(x, y) {
       respond(x + " times " + y + " is " + parseInt(x) * parseInt(y));
