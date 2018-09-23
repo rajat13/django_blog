@@ -1,6 +1,6 @@
 // listen to the mic, turns on the browser's mic if its not on
 function resume() {
-  $(".recording").css("background-color", "red");
+  $(".recording").css("background-color",'#a51a1a') ;
   isListening = true;
   annyang.resume();
 }
@@ -271,6 +271,8 @@ if (annyang) {
       respond("oh my god Becky, look at her butt");
     },
     'play diljit':function(){
+      respond('Playing diljit enjoy');
+      annyang.abort();
       var audio = document.getElementById("diljit");
       audio.play();
     },

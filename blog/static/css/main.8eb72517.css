@@ -1,4 +1,4 @@
-font-face {
+@font-face {
 	font-family: Roboto;
 	font-style: italic;
 	font-weight: 300;
@@ -62,6 +62,7 @@ font-face {
 margin-bottom:50px
 
 }
+
 .fa {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
@@ -2238,6 +2239,7 @@ html {
 
 body {
 	margin: 0
+
 }
 
 article,
@@ -3026,7 +3028,7 @@ body {
 		right: -50px;
 		content: " ";
 		display: block;
-		background: url(../images/home-background.961a5572.jpg) right top no-repeat #bababa;
+		background: url(../images/home-background2.961a5572.png) right top no-repeat #bababa;
 		background-size: cover;
 		width: auto;
 		height: 850px
@@ -3325,7 +3327,12 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	content: " ";
 	display: block;
 	width: 25%;
-	background: url(../images/home-background.961a5572.jpg) top center no-repeat #bababa;
+	background: url(../images/home-background2.961a5572.png) top center no-repeat #bababa;
+	&:after {
+    content: '';
+    @extend .absolute-centering;
+    background: rgba(#344557, .85);
+  }
 	background-size: cover
 }
 
@@ -3568,12 +3575,12 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 .home-section {
 	position: fixed;
 	top: 0;
+	overflow: scroll;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 1;
-	overflow: scroll;
-	background: url(../images/home-background-1.jpg) top center no-repeat #bababa;
+	background: url(../images/home-background2.961a5572.png) top center no-repeat #bababa;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
@@ -3588,51 +3595,39 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 		position: relative;
 		padding: 40px 20px;
 		background: 0 0;
-		font-size: 10px;
 		overflow: scroll;
+		font-size: 10px
 	}
 }
 
 @media (max-width:767px) {
 	.home-section {
-		font-size: 8px
-	}
-	.home-section .home-heading{
-		color: black;
-	}
-	.home-section .home-subheading{
-		color:black;
+		font-size: 8px;
+		overflow: scroll;
 	}
 }
 
 @media (max-width:567px) {
 	.home-section {
-		font-size: 7px
-	}
-	.home-section .home-subheading{
-		color:black;
-	}
-	.home-section .home-heading{
-		color:black;
+		font-size: 7px;
 	}
 }
 
 .home-section .home-section-inner {
 	max-width: 840px;
-	margin-left: 25%
+	margin-left: 25%;
 }
-
-
 
 @media (max-width:1023px) {
 	.home-section .home-section-inner {
-		margin: 0
+		margin: 0;
 	}
 }
 
 .home-section .home-heading {
 	font-size: 4em;
-	font-weight: 500
+	font-weight: 500;
+
 }
 
 .home-section .home-subheading {
@@ -3652,10 +3647,9 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 }
 
 .home-section .home-buttons {
-	margin-top: 2.25em;
-	margin-bottom: 2em;
+	margin-top: 4em;
+	margin-bottom: 5em;
 	overflow: hidden;
-	hidden:true;
 	font-size: 2em;
 	-webkit-animation-name: fadein;
 	animation-name: fadein;
@@ -3669,13 +3663,21 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 
 @media (max-width:1023px) {
 	.home-section .home-buttons {
-		margin-top: 1em
+		margin-top: 1em;
+		margin-bottom: 3em;
 	}
 }
 
 @media (max-width:767px) {
 	.home-section .home-buttons {
 		margin-top: 0;
+		font-size: 18px
+	}
+}
+@media (max-width:567px) {
+	.home-section .home-buttons {
+		margin-top: 0.5em;
+		margin-bottom: 8em;
 		font-size: 18px
 	}
 }
