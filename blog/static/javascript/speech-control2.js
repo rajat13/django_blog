@@ -145,7 +145,7 @@ function speak(text, voiceName) {
   msg.onend = resume;
 
 }
-
+var namespoke=false;
 // displays words that should be read, delay added for effect
 function respond(words, html) {
 
@@ -243,7 +243,7 @@ var isListening;
 // this keeps a global "search" or "keyword" for things that need to reference it
 var globalTerm;
 var user_name="";
-var namespoke=false;
+
 
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
