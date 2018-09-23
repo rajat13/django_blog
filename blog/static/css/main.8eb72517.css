@@ -47,14 +47,20 @@ font-face {
 	font-style: normal
 }
 .recording {
+
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color:red;
 }
+.recording-block{
+	font-family: "Apple Color Emoji";
+	font-size: 3px;
+	display: inline-block;
+}
 #speech2{
-position:absolute;
-bottom:0px
+margin-bottom:50px
+
 }
 .fa {
 	display: inline-block;
@@ -3566,6 +3572,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	left: 0;
 	right: 0;
 	z-index: 1;
+	overflow: scroll;
 	background: url(../images/home-background-1.jpg) top center no-repeat #bababa;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
@@ -3581,7 +3588,8 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 		position: relative;
 		padding: 40px 20px;
 		background: 0 0;
-		font-size: 10px
+		font-size: 10px;
+		overflow: scroll;
 	}
 }
 
@@ -3614,6 +3622,8 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 	margin-left: 25%
 }
 
+
+
 @media (max-width:1023px) {
 	.home-section .home-section-inner {
 		margin: 0
@@ -3642,8 +3652,10 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 }
 
 .home-section .home-buttons {
-	margin-top: 6.25em;
+	margin-top: 2.25em;
+	margin-bottom: 2em;
 	overflow: hidden;
+	hidden:true;
 	font-size: 2em;
 	-webkit-animation-name: fadein;
 	animation-name: fadein;

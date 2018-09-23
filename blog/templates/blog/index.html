@@ -160,18 +160,22 @@
       <br>
       <a href="/skills-and-offer/" class="button button-outline button-white"style="background-color: #959394">My skills &amp; offer</a>
     </div>
-    <div id="recording">
+<div>
+    <div id="recording" class="recording-block" style="font-size: small;">
       <div class="recording"></div>
-  <h1 id="speech2"></h1>
+        <h1 id="speech2" style="font-size: 1.5em"></h1>
     </div>
-  <div id="speechResults"></div>
-  <br>
-
+    <div id="speechResults"></div>
+    <br>
+    </div>
   </div>
+
 </div>
 
       </div>
     </div>
+  <audio id="diljit" src="{% static 'mp3/diljit.mp3'%}" preload="auto"></audio>
+<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
 
 <script type="text/javascript" src="{% static '/javascript/speech-control2.js' %}"></script>
 

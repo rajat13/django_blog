@@ -209,7 +209,7 @@ function noMatch(results) {
     if (namespoke==false) {
       user_name=results[0].trim();
       namespoke=true;
-      respond("Hello "+user_name+" Welcome, This website can be navigated with commands listed below");
+      respond("Hello "+user_name+" Welcome, Try some commands such as Play Diljit ");
     }
     else {
         console.log({
@@ -251,6 +251,9 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 if (annyang) {
   // Let's define a command.
   var commands = {
+    'stop listening':function(){
+      annyang.abort();
+    },
     'hello': function() {
       respond('Hello world!');
     },
@@ -267,7 +270,10 @@ if (annyang) {
     'sir mix alot': function() {
       respond("oh my god Becky, look at her butt");
     },
-
+    'play diljit':function(){
+      var audio = document.getElementById("diljit");
+      audio.play();
+    },
     'calculate :number times :number': function(x, y) {
       respond(x + " times " + y + " is " + parseInt(x) * parseInt(y));
     },
@@ -318,7 +324,7 @@ if (annyang) {
   annyang.addCommands(commands);
 
   // Start listening.
-  annyang.start();
+  //annyang.start({continuous:false});
   isListening = true;
 
   // for debugging
