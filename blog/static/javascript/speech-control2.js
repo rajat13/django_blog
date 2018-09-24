@@ -271,11 +271,18 @@ if (annyang) {
       respond("oh my god Becky, look at her butt");
     },
     'play diljit':function(){
-        console.log("diljit came");
-        setTimeout(function (){abort();},5000);
+      console.log("diljit came");setTimeout(function (){abort();},5000);
             respond('Playing diljit enjoy');
             var audio = document.getElementById("diljit");
+            audio.defaultMuted=true;
             audio.play();
+            timeout(function () {
+              var flag = alert("Unmute the song");
+              if(flag==true){
+                audio.defaultMuted=false;
+              }
+
+            })
     },
     'calculate :number times :number': function(x, y) {
       respond(x + " times " + y + " is " + parseInt(x) * parseInt(y));
