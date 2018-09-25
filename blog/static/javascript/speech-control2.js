@@ -5,6 +5,8 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -270,13 +272,23 @@ var isListening;
 var globalTerm;
 var user_name="";
 
-
+var song_list=["goliyan","yaar","akhar"];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 if (annyang) {
   // Let's define a command.
   var commands = {
+    'play music':function(){
+      resultshtml="";resultshtml=resultshtml+("<ul>");
+      for(var i=0;i<song_list.length;i++){
+
+        resultshtml=resultshtml+("<li>"+song_list[i]+"</li>")
+      }
+      resultshtml=resultshtml+("</ul>");
+      respond("Please select song",resultshtml);
+
+    },
     'stop listening':function(){
       annyang.abort();
     },
@@ -334,7 +346,18 @@ if (annyang) {
       globalTerm = term;
       jsonpGetter("https://api.duckduckgo.com/?q=" + encodeURIComponent(term) + "&format=json", "displayDuckduckgo");
     },
-
+      '*song':function(song_name){
+      console.log(song_name);
+        if(song_list.includes(song_name)){
+            setTimeout(function () {
+            abort();
+        }, 5000);
+        respond('Playing '+song_name+' enjoy');
+        var audio = document.getElementById("song_"+song_name);
+        audio.play();
+        }
+        noMatch();
+      },
     ':term meme': {
       'regexp': /^(.*) meme$/,
       'callback': giphy
@@ -368,6 +391,7 @@ if (annyang) {
     var cookie = getCookie("django_blog");
     if(cookie!=""){
       user_name=cookie;
+      namespoke=true;
       respond("Welcome Back "+user_name+" I recognize you , i am listening");
     }
     else{
