@@ -2631,6 +2631,9 @@ th {
 	color: #990073
 }
 
+#audio{
+display: none
+}
 .highlight .bp {
 	color: #999
 }
@@ -4297,4 +4300,3 @@ body.cv {
 	font-size: 18px;
 	color: #333;
 	line-height: 1.3
-}

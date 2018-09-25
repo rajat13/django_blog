@@ -1,3 +1,26 @@
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
 // listen to the mic, turns on the browser's mic if its not on
 function resume() {
   $(".recording").css("background-color",'#a51a1a') ;
@@ -90,6 +113,8 @@ function displayDuckduckgo(results) {
 
   respond("Here is search results for \"" + globalTerm + "\"", resultsHTML);
 }
+
+
 
 // dragon animation
 function dragon() {
@@ -209,6 +234,7 @@ function noMatch(results) {
     if (namespoke==false) {
       user_name=results[0].trim();
       namespoke=true;
+      setCookie("django_blog",user_name,10);
       respond("Hello "+user_name+" Welcome, Try some commands such as Play Diljit ");
     }
     else {
@@ -270,20 +296,17 @@ if (annyang) {
     'sir mix alot': function() {
       respond("oh my god Becky, look at her butt");
     },
-    'play diljit':function(){
-      console.log("diljit came");setTimeout(function (){abort();},5000);
-            respond('Playing diljit enjoy');
-            var audio = document.getElementById("diljit");
-            audio.defaultMuted=true;
-            audio.play();
-            timeout(function () {
-              var flag = alert("Unmute the song");
-              if(flag==true){
-                audio.defaultMuted=false;
-              }
+    'play diljit':function() {
+        console.log("diljit came");
+        setTimeout(function () {
+            abort();
+        }, 5000);
+        respond('Playing diljit enjoy');
+        var audio = document.getElementById("diljit");
+        audio.play();
+    }
 
-            })
-    },
+    ,
     'calculate :number times :number': function(x, y) {
       respond(x + " times " + y + " is " + parseInt(x) * parseInt(y));
     },
@@ -342,7 +365,13 @@ if (annyang) {
 
   // greeting once everything starts up
   setTimeout(function() {
+    var cookie = getCookie("django_blog");
+    if(cookie!=""){
+      user_name=cookie;
+      respond("Welcome Back "+user_name+" I recognize you , i am listening");
+    }
+    else{
     respond("Hi! My name is Indu , I am an Artificial Intelligence written by Rajat, Can u tell me your name?");
-  }, 1000);
+  }},1000)
 
 }
