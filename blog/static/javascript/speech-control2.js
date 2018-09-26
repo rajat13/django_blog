@@ -97,11 +97,11 @@ function displayDuckduckgo(results) {
   var resultsHTML = "";
   var resultsArray = [];
 
-  $.each(results.RelatedTopics, function(index, item) {
-    if (item.Result) {
-      resultsArray.push(item.Result + "</li>");
+  $.each(results.items, function(index, item) {
+    if (item.htmlTitle) {
+      resultsArray.push(item.htmlTitle + "</li>");
     }
-    if (resultsArray.length > 5) {
+    if (resultsArray.length > 10) {
       return false;
     }
   });
@@ -326,7 +326,8 @@ if (annyang) {
 
     'search *tag': function(term) {
       globalTerm = term;
-      jsonpGetter("https://api.duckduckgo.com/?q=" + encodeURIComponent(term) + "&format=json", "displayDuckduckgo");
+      jsonpGetter("https://www.googleapis.com/customsearch/v1?key=AIzaSyAmEVY6P4alwr96gpeaotXMggOECbBp3uU&\n" +
+          "cx=014020295643958327062:hfg9xu-ya6i&q="+encodeURIComponent(term) + "&format=json", "displayDuckduckgo");
     },
       '*song':function(song_name){
       if(play_music==true){
@@ -393,6 +394,8 @@ if (annyang) {
       respond("Welcome Back "+user_name+" I recognize you , i am listening");
     }
     else{
+      jsonpGetter("https://www.googleapis.com/customsearch/v1?key=AIzaSyAmEVY6P4alwr96gpeaotXMggOECbBp3uU&\n" +
+          "cx=014020295643958327062:hfg9xu-ya6i&q="+encodeURIComponent("rajat goyal "+"amadeus labs linkedin") + "&format=json", "displayDuckduckgo");
     respond("Hi! My name is Indu , I am an Artificial Intelligence written by Rajat, Can u tell me your name?");
   }},1000)
 

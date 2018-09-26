@@ -3652,7 +3652,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 
 .home-section .home-buttons {
 	margin-top: 4em;
-	margin-bottom: 5em;
+	margin-bottom: 3em;
 	overflow: hidden;
 	font-size: 2em;
 	-webkit-animation-name: fadein;
@@ -3668,7 +3668,7 @@ html:not(.platform-mac) .site-sidebar .block-blog {
 @media (max-width:1023px) {
 	.home-section .home-buttons {
 		margin-top: 1em;
-		margin-bottom: 3em;
+		margin-bottom: 2em;
 	}
 }
 
