@@ -233,13 +233,6 @@ console.log(sentence);
 };
 
 function noMatch(results) {
-    if (namespoke==false) {
-      user_name=results[0].trim();
-      namespoke=true;
-      setCookie("django_blog",user_name,10);
-      respond("Hello "+user_name+" Welcome, Try some commands such as Play Diljit ");
-    }
-    else {
         console.log({
             missedResults: results
         });
@@ -252,7 +245,6 @@ function noMatch(results) {
 
         });
         respond("I am not programmed to respond to \"" + results[0].trim() + "\"");
-    }
 }
 /*
 
@@ -271,7 +263,7 @@ var isListening;
 // this keeps a global "search" or "keyword" for things that need to reference it
 var globalTerm;
 var user_name="";
-
+var play_music=false;
 var song_list=["goliyan","yaar","akhar"];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -280,6 +272,7 @@ if (annyang) {
   // Let's define a command.
   var commands = {
     'play music':function(){
+      play_music=true;
       resultshtml="";resultshtml=resultshtml+("<ul>");
       for(var i=0;i<song_list.length;i++){
 
@@ -304,20 +297,9 @@ if (annyang) {
       'regexp': /^(.*)dragon(.*)$/,
       'callback': dragon
     },
-
     'sir mix alot': function() {
       respond("oh my god Becky, look at her butt");
-    },
-    'play diljit':function() {
-        console.log("diljit came");
-        setTimeout(function () {
-            abort();
-        }, 5000);
-        respond('Playing diljit enjoy');
-        var audio = document.getElementById("diljit");
-        audio.play();
     }
-
     ,
     'calculate :number times :number': function(x, y) {
       respond(x + " times " + y + " is " + parseInt(x) * parseInt(y));
@@ -347,17 +329,33 @@ if (annyang) {
       jsonpGetter("https://api.duckduckgo.com/?q=" + encodeURIComponent(term) + "&format=json", "displayDuckduckgo");
     },
       '*song':function(song_name){
-      console.log(song_name);
-        if(song_list.includes(song_name)){
+      if(play_music==true){
+        console.log(song_name);
+        play_music=false;
+      var results=[song_name];
+        if(song_list.includes(song_name)) {
             setTimeout(function () {
-            abort();
-        }, 5000);
-        respond('Playing '+song_name+' enjoy');
-        var audio = document.getElementById("song_"+song_name);
-        audio.play();
-        }
-        noMatch();
-      },
+                abort();
+            }, 5000);
+            respond('Playing ' + song_name + ' enjoy');
+            var audio = document.getElementById("song_" + song_name);
+            audio.play();
+        }else{
+        respond("Currently i do not have song " + song_name);
+      }}
+      else{
+         if (namespoke==false) {
+      user_name=song_name;
+      namespoke=true;
+      setCookie("django_blog",user_name,10);
+      respond("Hello "+user_name+" Welcome, Try some commands such as search or play music");
+    }
+    else{
+      respond("I am not programmed to respond to "+song_name);
+    }
+      }
+      }
+      ,
     ':term meme': {
       'regexp': /^(.*) meme$/,
       'callback': giphy
